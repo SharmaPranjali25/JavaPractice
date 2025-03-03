@@ -30,8 +30,10 @@ public class Example4 {
 		for(String dt: listNames) {
 			System.out.println(dt);
 		}
+		Collections.sort(listNames); //ascending order
+		System.out.println(listNames);
 		
-		Collections.sort(listNames.reversed());
+		Collections.sort(listNames.reversed()); //reverse order
 		System.out.println(listNames);
 		
 		}
