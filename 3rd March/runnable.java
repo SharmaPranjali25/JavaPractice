@@ -8,6 +8,7 @@ class RunnableImpl implements Runnable{
 }
 public class runnable {
 	static ExecutorService executor= Executors.newFixedThreadPool(2);
+	//2 means the thread number
 	public static void main(String[] args) {
 		
 		
