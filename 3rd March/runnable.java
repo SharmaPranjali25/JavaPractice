@@ -15,6 +15,9 @@ public class runnable {
 		//create and run runnable task using thread class
 		RunnableImpl task= new RunnableImpl();
 		Thread thread= new Thread(task);
+		//tradition method for calling
+		//task.run();
+	
 		thread.start();
 		//create and run runnable task using Executor Service
 		executor.submit(task);
