@@ -99,6 +99,7 @@ public class Exp3 {
 			System.out.println(et.getKey()+" "+et.getValue());
 			
 		}
+		List<Customer> cntData= data.keySet().stream().toList();
 	}
 
 }
