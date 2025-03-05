@@ -20,6 +20,7 @@ public Customer(int id, String name, String city, int pinCode) {
 		this.name = name;
 		this.city = city;
 		this.pinCode = pinCode;
+	//volatile int abcd;
 	}
 //store customer data to files then Read this data
 
