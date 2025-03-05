@@ -2,6 +2,7 @@ package com.test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Exp1 {
@@ -27,11 +28,12 @@ public class Exp1 {
 			
 			//THIS WILL HAPPEN WHEN WE HAVE STUDENT TABLE ALREADY IN MYSQL
 			Student std= new Student(306, "Alice","alice123@gmail.com");
-				String sql= "insert into student values("+std.getId()+", '"+std.getName()+"','"+std.getEmail()+"')";
+			//String sql= "insert into student values("+std.getId()+", '"+std.getName()+"','"+std.getEmail()+"')";
 			
 			//4. Execute Query
 			stmt.execute(sql);
-			System.out.println("Done.");
+			
+			
 			
 			
 			
