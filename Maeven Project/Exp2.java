@@ -2,6 +2,8 @@ package com.test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 
 public class Exp2 {
@@ -29,16 +31,36 @@ public class Exp2 {
 			//UPDATE
 		//	String sql= "update employee set emp_name='Bhagya' , emp_email= 'bhagya420@gmail.com' , emp_city='Mangalore' where id=101";
 			
+			
 			//DELETE
-			String sql= "delete from  Employee where id=110";
+			//String sql= "delete from  Employee where id=110";
+			
+			
+			
 			
 			
 		//4. Execute Query
-		stmt.execute(sql);
+			//READ
+			
+			
+
+			String sql= "select * from Employee";
+			ResultSet rs= stmt.executeQuery(sql);
+			while(rs.next()) {
+				System.out.println("ID: "+ rs.getInt(1)+" Name: "+rs.getString(2)+" Email: "+ rs.getString(3)+" City: "+ rs.getString(4));
+				
+			}
+			ResultSetMetaData rsd= rs.getMetaData();
+			System.out.println(rsd.getColumnCount());
+			System.out.println(rsd.getColumnType(1));
+			
+			
+			
+			
 		System.out.println("Done.");
 		
 		//5. close the connection object
-		con.close();
+		//con.close();
 			
 		}
 		catch(Exception e) {
