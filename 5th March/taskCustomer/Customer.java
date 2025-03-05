@@ -7,7 +7,8 @@ public class Customer implements Serializable{
 	private int id;
 	private String name;
 	private String city;
-	private int pinCode;
+	private transient int pinCode;
+	//transient means this pin code is excluded
 	
 	public Customer() {
 		
