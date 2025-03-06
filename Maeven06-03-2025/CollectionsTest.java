@@ -29,5 +29,12 @@ public class CollectionsTest {
 		
 		
 	}
+	public void testCollectionObjects() {
+		List<Fruits> listActual= Arrays.asList(new Fruits("bana",5),
+				new Fruits("apple",30),
+				new Fruits("orange",50));
+		
+		assertThat(listActual, hasItems(new Fruits("orange",50)));
+	}
 
 }
