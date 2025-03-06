@@ -29,11 +29,13 @@ public static void AeforeClass() {
 @Before
 public void setUp() {
 	System.out.println("Execute every test method before execution");
+	obj= new Calculator();
 }
 
 @After
 public void setDown() {
 	System.out.println("Execute every test after before execution");
+	obj=null;
 }
 @Test
 public void testAdd() {
