@@ -62,3 +62,35 @@ public void testGreetUser() {
 	
 }
 }
+
+/*
+ * BeforeClass
+ * Before
+ * Test
+ * After 
+ * Before
+ * Test
+ * After
+ * AfterClass
+ * 
+ * 
+ * 
+ */
+
+OUPUT:   
+Before all test cases only one time
+Execute every test method before execution
+testGreetUser method
+Execute every test after before execution
+Execute every test method before execution
+testAdd method
+Execute every test after before execution
+Execute every test method before execution
+testMul method
+Execute every test after before execution
+Execute every test method before execution
+testSub method
+Execute every test after before execution
+After all test cases only one time
+
+
