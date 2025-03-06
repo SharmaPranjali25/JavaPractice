@@ -1,6 +1,6 @@
 package com.test;
 import static org.junit.Assert.assertEquals;
-
+//run here
 //  src/test/java
 import org.junit.After;
 import org.junit.AfterClass;
