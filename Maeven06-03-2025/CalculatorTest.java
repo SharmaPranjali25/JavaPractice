@@ -1,6 +1,6 @@
 package com.test;
 import static org.junit.Assert.assertEquals;
-//run here
+
 //  src/test/java
 import org.junit.After;
 import org.junit.AfterClass;
@@ -17,6 +17,7 @@ public static void beforeClass() {
 	System.out.println("Before all test cases only one time");
 	x=10;
 	y=50;
+	//y=30;
 }
 
 @AfterClass
@@ -35,13 +36,14 @@ public void setUp() {
 @After
 public void setDown() {
 	System.out.println("Execute every test after before execution");
-	obj=null;
+	obj= null;
 }
 @Test
 public void testAdd() {
 	System.out.println("testAdd method");
 	int result=obj.add(x, y);
 	assertEquals(60,result); //to check if we get same data or not
+	//this one will give error if we keep this 60 and y=30
 	
 }
 @Test
@@ -64,6 +66,22 @@ public void testGreetUser() {
 	
 }
 }
+
+
+/*
+ * BeforeClass
+ * Before
+ * Test
+ * After 
+ * Before
+ * Test
+ * After
+ * AfterClass
+ * 
+ * 
+ * 
+ */
+
 
 /*
  * BeforeClass
