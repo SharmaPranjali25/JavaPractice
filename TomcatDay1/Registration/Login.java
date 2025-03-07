@@ -18,56 +18,57 @@ public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
-   
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		response.setContentType("text/html");
-		PrintWriter out= response.getWriter();
 		
-		String name= request.getParameter("user");
-		String pass= request.getParameter("pwd");
+		PrintWriter out = response.getWriter();
 		
-		String driver= "com.mysql.jdbc.Driver";
-		String url= "jdbc:mysql://localhost:3306/assignment";
-		String userName= "root";
-		String password= "root@39";
+		String name = request.getParameter("user");
+		String pass = request.getParameter("pwd");
 		
-		try {
+		String driver = "com.mysql.jdbc.Driver";
+		String url = "jdbc:mysql://localhost:3306/assignment";
+		String userName = "root";
+		String password = "root@39";
+		
+		try
+		{
 			Class.forName(driver);
-			Connection con= DriverManager.getConnection(url, userName, password);
-			String sql= "select mla_user, mla_pass from  user_mla where mla_user=? and mla_pass= ?";
-			PreparedStatement pst= con.prepareStatement(sql);
-			ResultSet rs= pst.executeQuery();
+			Connection con = DriverManager.getConnection(url,userName,password);
+			
+			String sql = "select mla_user, mla_pass from user_mla where mla_user = ? and mla_pass = ?";
+			
+			PreparedStatement pst = con.prepareStatement(sql);
 			
 			pst.setString(1, name);
 			pst.setString(2, pass);
 			
-			int x= pst.executeUpdate();
-			if(x>0) {
-				RequestDispatcher rd= request.getRequestDispatcher("home.html");
-				rd.forward(request,  response);
+			ResultSet rs = pst.executeQuery();
+			
+			while(rs.next()) {
+			
+			if(rs.getString(1).equals(name))
+			{
+				RequestDispatcher rd = request.getRequestDispatcher("home.html");
+				
+				rd.forward(request, response);
 			}
-			else {
-				out.println("<center> <h3> <font color='red'>Login Failed. </h3> </center>");
-				RequestDispatcher rd= request.getRequestDispatcher("login.html");
+			 break;
+			}
+			if(true)
+			{
+				out.println("<center> <h3><font color = 'red'> Login failed.</font> </h3></center>");
+				
+				RequestDispatcher rd = request.getRequestDispatcher("login.html");
+				
 				rd.include(request, response);
 			}
-			
-			
 		}
-		catch(Exception e) {
+		catch(Exception e)
+		{
 			e.printStackTrace();
 		}
 	}
+
 }
-		
-		
-				
-		
-	
-		
-	
-
-
