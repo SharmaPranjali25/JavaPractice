@@ -12,7 +12,9 @@
 <%
 
 out.println(10/0);
-
+application.setAttribute("info", "Rohit");
+config.getInitParameter(arg0);
+session.getAttribute("info",user);
 
 %>
 
